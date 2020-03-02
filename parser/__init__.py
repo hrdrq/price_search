@@ -6,8 +6,8 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML
 
 class Parser:
 
-    def get(self, url, params):
-        r = requests.get(url, params=params, headers={ 'User-Agent': UA })
+    def get(self, url, params={}, headers={}):
+        r = requests.get(url, params=params, headers={ 'User-Agent': UA, **headers })
         return r
 
     def do_search(self, word):
