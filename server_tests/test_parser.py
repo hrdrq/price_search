@@ -10,6 +10,7 @@ from parser.mercari import Mercari
 from parser.rakuma import Rakuma
 from parser.ruten import Ruten
 from parser.shopee import Shopee
+from parser.rate import Rate
 
 def check(res):
     if res['status'] != 'success':
@@ -65,6 +66,11 @@ class ParserTest(unittest.TestCase):
         parser = Shopee()
         with vcr.use_cassette('server_tests/vcr_cassettes/shopee.yaml'):
             res = parser.search(self.word)
-        # print(res)
         self.assertTrue(check(res))
+
+    def test_rate(self):
+        parser = Rate()
+        with vcr.use_cassette('server_tests/vcr_cassettes/rate.yaml'):
+            res = parser.search(self.word)
+        self.assertTrue(isinstance(res['results'], float))
 
