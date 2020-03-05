@@ -9,7 +9,7 @@ from parser.shopee import Shopee
 
 app = Flask(__name__)
 
-@app.route('/search/<platform>')
+@app.route('/api/search/<platform>')
 def search(platform):
     word = request.args.get('word')
     return globals()[platform]().search(word)
