@@ -2,10 +2,10 @@
   <div id="search">
     <div id="inputs">
       <input id="jp" type="text" v-model="jp_word" :class="{ error: jp_empty }"
-             @keydown.enter="do_search"
+             @keydown.enter="enter"
              placeholder="Japanese or model number">
       <input id="tw" type="text" v-model="tw_word" :class="{ error: tw_empty }"
-             @keydown.enter="do_search"
+             @keydown.enter="enter"
              placeholder="Chinese or model number">
     </div>
     <div id="btn_container">
@@ -31,8 +31,11 @@ export default {
     }
   },
   methods: {
-    do_search(event) {
+    enter(event) {
       if (event.keyCode !== 13) return
+      this.do_search()
+    },
+    do_search() {
       this.jp_empty = this.jp_word === ''
       this.tw_empty = this.tw_word === ''
       if(this.jp_empty || this.tw_empty) return
