@@ -89,18 +89,8 @@ export default {
   mounted() {
     this.$axios.get('/api/rate')
       .then(res => {
-        this.rate = res.data.rate
+        this.rate = res.data.results
       })
-    // const countries = ['jp', 'tw']
-    // countries.forEach(country => {
-    //   Object.keys(this.items[country]).forEach(key => {
-    //     this.$axios.get('/api/search/' + key + '?word=ipad')
-    //       .then(res => {
-    //         this.items[country][key] = res.data.results
-    //       })
-    //
-    //   })
-    // })
   }
 }
 </script>
@@ -113,11 +103,10 @@ export default {
     display: inline-block;
     max-width: 1000px;
     width: 100%;
-    /* background: lightgrey; */
     #rate {
       font-size: 13px;
       letter-spacing: 2.4px;
-      margin-top: 8px;
+      margin: 8px 0;
       #title {
         width: 160px;
         display: inline-block;
@@ -133,7 +122,6 @@ export default {
         background: #f1f8ff;
         font-weight: bold;
         padding: 5px 0 5px 12px;
-        /* padding: 0.25em 0.5em; */
       }
     }
   }

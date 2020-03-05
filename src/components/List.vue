@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss">
 .list {
-  height: calc(100vh - 58px);
+  height: calc(100vh - 106px);
   overflow-y: scroll;
 }
 </style>
