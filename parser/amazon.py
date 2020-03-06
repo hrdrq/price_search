@@ -15,7 +15,7 @@ class Amazon(Parser):
         for item in doc(".s-result-item"):
             result = {}
             item = PyQuery(item)
-            price = item('.a-price-whole')
+            price = item('.a-price-whole').eq(0)
             if not price:
                 continue
             result['title'] = item('.a-section.a-spacing-none').eq(0).find('h2').text()
