@@ -1,24 +1,29 @@
 # price_search
 
-## Project setup
+Renewal of [priceSearch](https://github.com/hrdrq/priceSearch)
+
+Get and compare prices of productions in EC sites in Japan and Taiwan.
+
+### Demo
+[https://jp-tw-price-search.herokuapp.com/](https://jp-tw-price-search.herokuapp.com/)
+
+### Screenshot
+![](https://raw.githubusercontent.com/hrdrq/price_search/master/screenshot.png)
+
+### Install
 ```
+pipenv install
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Development
 ```
+python server.py
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Production
 ```
 npm run build
+gunicorn server:app
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
