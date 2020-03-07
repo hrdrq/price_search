@@ -4,6 +4,8 @@ Renewal of [priceSearch](https://github.com/hrdrq/priceSearch)
 
 Get and compare prices of productions in EC sites in Japan and Taiwan.
 
+Developed with Flask and Vue.js.
+
 ### Demo
 [https://jp-tw-price-search.herokuapp.com/](https://jp-tw-price-search.herokuapp.com/)
 
